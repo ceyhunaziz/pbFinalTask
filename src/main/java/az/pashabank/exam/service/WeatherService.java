@@ -24,6 +24,7 @@ public class WeatherService {
 
     public List<WeatherDto> getWeatherByDate(LocalDateTime localDateTime) {
         List<WeatherEntity> weatherEntities = weatherRepo.findAllByDate(localDateTime);
+
         return WeatherMapper.INSTANCE.listEntityToDto(weatherEntities);
     }
 
